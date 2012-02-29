@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="vertical"    
+			    android:background="@drawable/sky_background"
+			    android:weightSum="1">
+
+	<View android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.05"/> 
+	<ImageView 
+		android:layout_weight="0.50"
+		android:src="@drawable/tentative_logo"
+		android:layout_height="0dp"
+		android:layout_width="fill_parent"
+		android:visibility="invisible"
+		android:id="@+id/logo"/>
+
+	<View android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.075"/> 
+    <LinearLayout android:id="@+id/bottom_elements" android:visibility="invisible" android:weightSum="1" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.375">
+	 
+	 	<!-- -->
+	 	<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.12"/> 
+        <ImageView 
+         	android:layout_height="fill_parent" 
+         	android:layout_width="0dp" 
+         	android:src="@drawable/menu_start_button" 
+         	android:id="@+id/start_button"
+         	android:layout_weight="0.4"
+         	android:adjustViewBounds="true"/>
+
+       	<ImageView 
+         	android:layout_height="fill_parent"                	
+         	android:layout_width="0dp" 
+         	android:src="@drawable/menu_tutorial_button" 
+         	android:id="@+id/tutorial_button"
+         	android:adjustViewBounds="true"
+			android:layout_weight="0.4"/>	
+   	
+    	<LinearLayout android:id="@+id/option_button_list" android:layout_width="0dp" android:layout_height="fill_parent" android:orientation="vertical" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_weight="0.081" android:weightSum="0.9">
+    	    
+	    	<CheckBox android:id="@+id/option_button_sound" android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_sound"/>
+
+	    	<CheckBox android:id="@+id/option_button_colour_wheel" android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_colour_wheel"/>
+
+	    	<CheckBox android:id="@+id/option_button_vibrate" android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_vibrate"/>    
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	
+</LinearLayout>

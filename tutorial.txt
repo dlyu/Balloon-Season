@@ -1,0 +1,57 @@
+Balloon Season Tutorial Script
+
+UI design:
+Page flip buttons (prev/next)
+Exit button
+
+Page 1:
+Welcome and thank you for downloading Ballon Season!
+This tutorial will explain the objectives and instructions to this game.
+
+Page 2:
+The objective of this game is to score as many points as possible within a time limit.
+This is done by popping as many balloons as possible. Balloons will appear
+from the bottom of the screen and will continue to ascend before they go off-screen.
+Make sure you pop those balloons before they get a chance to escape!
+
+Page 3:
+To score a lot of points, it is important to accumulate combos. This is done by
+popping certain coloured balloons in a certain order. Consider the colour wheel
+on the top right corner. If you pop a balloon of a certain colour, you must pop
+either the same colour or one of the colour adjacent to the last colour.
+(insert colour wheel)
+
+Page 4:
+(show possible combos)
+Blue -> Pink -> Red = Combo
+
+(option to show real-time gameplay demonstration where the user must get 5 combos to pass)
+
+Page 5:
+You also need to be quick with your combo as it does decrease with the time not spent on
+getting combos. Messing up on a combo also leads to a penalty to your combo count!
+
+Page 6:
+There are two game modes: Arcade Mode and Rush Mode. Arcade Mode lasts 90 seconds while Rush Mode lasts 60 seconds.
+(show the two game mode buttons)
+
+Page 7:
+Arcade Mode features temporary weather effects that changes the gameplay. For instance, the snow effect
+slows down all of the balloons' ascention and stops the timer.
+(show a screenshot)
+
+Page 8:
+Another weather effect is the sun. Here only balloons of the same colour is produced, making it a lot easier to rack up combos.
+(show a screenshot)
+
+Page 9:
+The final weather effect will not make you happy. It is the fog, which deliberately clouds your vision and you may not be able to see
+the balloons' colour properly.
+(show a screenshot)
+
+Page 10:
+That covers Arcade Mode. Rush Mode does not feature weather effects so it is mainly a mode where you can test your ability to rack up combos.
+However, balloons appear in greater numbers and at a much high frequency, so you really need to be quick!
+
+Page 11:
+That is it for the tutorial. Thank you again for downloading Balloon Season and I hope you enjoy the game!

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+    <com.balloon.dl.GameCanvas
+		android:id="@+id/arcadecanvas"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"/>
+      <RelativeLayout
+        android:background="#00000000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+   		<ImageView 
+			android:id="@+id/times_up_label"
+			android:src="@drawable/times_up_label"
+			android:layout_width="fill_parent"
+			android:layout_height="100dp"
+			android:gravity="center"
+			android:visibility="invisible"/>  
+          
+       	<LinearLayout
+	   	    android:id="@+id/pause_ui"
+			android:background="#77000000"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:orientation="vertical"
+	  	    android:weightSum="1"
+	        android:visibility="invisible">
+	        	<View android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.05"/>
+	        	
+           		<ImageView
+           		    android:id="@+id/pause_label"
+		   			android:src="@drawable/pause_label"
+		   			android:layout_width="fill_parent"
+		   			android:layout_height="0dp"
+		   			android:gravity="center"
+		   			android:layout_weight="0.3"/>
+			  	
+           		<View android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.05"/>
+           		
+  		       	<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:id="@+id/button_group"
+			        android:layout_height="0dp" 
+			  	    android:layout_weight="0.3"
+			  	    android:weightSum="1">
+			  	    	<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.125"/>  
+		        		<ImageButton 
+		        			android:background="@null"
+		        			android:id="@+id/resume_arcade"
+		        			android:src="@drawable/resume_button"
+		        			android:layout_weight="0.25"
+				            android:layout_width="0dp"
+				            android:layout_height="fill_parent"/>
+		   		        <ImageButton
+		   		        	android:background="@null"
+		   		        	android:id="@+id/play_again_arcade"
+		   		        	android:src="@drawable/retry_button"
+		   		        	android:layout_weight="0.25"
+		   		        	android:layout_width="0dp"
+				            android:layout_height="fill_parent"/>
+       					<ImageButton
+							android:background="@null"
+							android:layout_height="fill_parent"
+							android:layout_width="0dp"
+							android:id="@+id/quit_arcade"
+							android:src="@drawable/exit_button"
+							android:layout_weight="0.25"/>
+		            	<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.125"/>
+	            </LinearLayout>
+
+				<View android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.1"/>
+				  
+				<LinearLayout
+					android:id="@+id/pause_bottom_elements"
+					android:layout_width="fill_parent"
+			        android:layout_height="0dp" 
+			  	    android:layout_weight="0.2"
+			  	    android:orientation="horizontal"
+			  	    android:weightSum="1">
+					<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.05"/>
+		  		    <LinearLayout 
+		  		        android:id="@+id/ad_placeholder" 
+		  		        android:background="#00000000"
+		  		        android:layout_height="fill_parent" 
+		  		        android:layout_width="0dp" 
+		  		        android:layout_weight="0.65"/>
+					<LinearLayout android:orientation="horizontal" android:layout_width="0dp" android:weightSum="1" android:layout_height="fill_parent" android:layout_weight="0.25">
+					    <CheckBox android:id="@+id/option_button_sound" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_sound"/>
+					    <View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.05"/>
+				    	<CheckBox android:id="@+id/option_button_colour_wheel" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_colour_wheel"/>
+				    	<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.05"/>
+				    	<CheckBox android:id="@+id/option_button_vibrate" android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.3" android:button="@drawable/option_button_vibrate"/>
+					</LinearLayout>
+					<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.05"/>
+				</LinearLayout>
+	     </LinearLayout>
+	     
+	     <!-- The game over UI that pops up when the game is over --> 
+	     <LinearLayout
+	   	 	android:id="@+id/gameover_ui"
+			android:background="#77000000"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:orientation="vertical"
+	  	    android:weightSum="1"
+	        android:visibility="invisible">
+	        	<View android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.05"/>
+ 				<LinearLayout
+           			android:layout_width="fill_parent"
+        			android:layout_height="0dp"
+        			android:gravity="center"
+        			android:layout_weight="0.33">
+					
+					<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.3"/>
+	 				<com.balloon.dl.EndScoreLabel
+	   	            	android:id="@+id/gameover_scoreboard"
+	        			android:layout_width="0dp"
+	        			android:layout_height="fill_parent"
+	        			android:gravity="center"
+	        			android:layout_weight="0.4" 
+	 				    />
+	 				<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.3"/> 				    
+ 				</LinearLayout>
+
+				<View android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.05"/>
+
+  		       	<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="0dp" 
+			  	    android:layout_weight="0.3"
+			  	    android:weightSum="1">
+			  	    	<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25"/>  
+		        		<ImageButton 
+		        			android:background="@null"
+		        			android:id="@+id/play_again_arcade_2"
+		        			android:src="@drawable/retry_button"
+		        			android:layout_weight="0.25"
+				            android:layout_width="0dp"
+				            android:layout_height="fill_parent"/>
+		   		        <ImageButton
+		   		        	android:background="@null"
+		   		        	android:id="@+id/exit_arcade"
+		   		        	android:src="@drawable/exit_button"
+		   		        	android:layout_weight="0.25"
+		   		        	android:layout_width="0dp"
+				            android:layout_height="fill_parent"/>
+		            	<View android:layout_height="fill_parent" android:layout_width="0dp" android:layout_weight="0.25"/>
+	            </LinearLayout>
+	            <View android:layout_height="0dp" android:layout_width="fill_parent" android:layout_weight="0.42"/> 
+	     </LinearLayout>
+     </RelativeLayout>
+</FrameLayout>

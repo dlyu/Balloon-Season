@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.balloon.dl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/end_score_layout_empty"
+    android:weightSum="1" >
+		<com.balloon.dl.customviews.BorderedTextView
+		    android:text="@string/game_over_score_label"
+			android:layout_weight="0.4"
+		    android:layout_height="0dp"
+		    android:layout_width="match_parent"
+		    android:paddingTop="8dp"
+		    android:paddingLeft="8dp"
+   		    android:textSize="30dp"
+		    android:textColor="#FFECECFF"
+		    custom:borderSize="3dp"
+			custom:borderColor="#FF777777"/>
+		<com.balloon.dl.customviews.BorderedTextView
+	        android:id="@+id/final_score"
+			android:layout_weight="0.4"
+		    android:layout_height="0dp"
+		    android:layout_width="match_parent"
+		    android:paddingTop="5dp"
+		    android:paddingLeft="10dp"
+		    android:textSize="40dp"
+		    android:textColor="#FFECECFF"
+		    custom:borderSize="5dp"
+			custom:borderColor="#FF777777"/>
+		<com.balloon.dl.customviews.BorderedTextView
+		    android:text="@string/game_over_highscore_label"
+	        style="@style/GoldenFont"
+	        android:id="@+id/high_score_label"
+			custom:borderSize="2dp"
+		    android:layout_weight="0.2"
+		    android:layout_height="0dp"
+		    android:layout_width="match_parent"
+			custom:borderColor="#FFABAB37"			/>
+			<!-- android:visibility="invisible" -->
+
+</LinearLayout>

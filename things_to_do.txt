@@ -1,0 +1,89 @@
+Things to do:
+    Polish up the HUD; make the high score label smaller and possibly make the metrics shown in different font (and use actual font)
+    Add texture to fog (dithering?)
+    Try to shorten the contents of the tutorial
+    Tutorial interface overhaul (i.e. categorize them and try not to load every page at one time; it uses up a lot of heap)
+    Background music
+    Update graphics to match dpi settings, for example the end of score labels being too pixellated and blurred
+    Implement OpenFeint
+
+Lower priority:
+    Micro mode
+    "Bad" balloons
+    
+Note:
+    The PreferencesManager class may be leaking Context
+    
+/*
+ * TO DO LIST (CIRCA JUNE 17 2011)
+ *  
+ *  OPTIONAL: I should optimize how the GameCanvas controls the View elements. Try to avoid using Handlers because I think there is a better way to do this.
+ *  OPTIONAL: Make an hdpi version of the end score label and its components (the scoreboard presented when the game is over)
+ *  OPTIONAL: Consider making the animations for the tutorial pages run in sequence as opposed to simultaneously
+ *  OPTIONAL: Add sound effect with UI interaction
+ *  OPTIONAL: Improve the sound delay issue
+ *  	Maybe my device is just slow? Consider testing on other devices.
+ *  OPTIONAL: Save the mHighScoreFlag variable in the Bundle so that it is not lost. Although it will be set to the proper value when the player updates the score, what if this doesn't happen?
+ *  
+ * NEXT UPDATE (maybe)
+ *  Continuous levels: gets harder with each progression
+ * 	Micro mode: balloons are really small and come in greater numbers
+ * 	Hunter mode: use of various weapons to pop balloons. Not timed but you can only let a certain number of balloons escape before it's game over. Balloons appear more frequently and in higher numbers over time. Also make a mode select button for it.
+ * 	Include a visual status of the balloons that escaped (for hunter mode)
+ * 	Game state preservation: preserve weapon information (and maybe snow drop information but that seems too redundant at the moment)
+ *  
+ * MAYBE LIST (lower priority)
+ *  Tutorials, also ask the user if he/she wants to see the tutorials if this is the first time playing
+ *  Change rush mode so that the score is in balloons/second because people have the tendency to just pop as many balloons as they can
+ *  Smoother transition between activities (i.e. no trace of the previous activity should be visible when transitioning between activities). Consider merging the MainMenuActivity and the GameMenuActivity.
+ *  Implement the option button as image checkboxes
+ *  The lag issue: consider using synchronized blocks and looking into load management for the thread? Also it seems to lag when the device is running in USB Debug Mode. Doesn't seem to occur as much anymore...
+ *  Improve simultaneous popping sounds. The problem may come from the data structure that is being used; some popping sounds happen sooner than others. Maybe those are the balloons that come first in the linked list?
+ * 	Better graphics (the background, which will also be used for the menu). Make it a tiny bit darker?
+ * 	Split screen mode: two separate environments. Can be played by one person (utilizing both thumbs) or by two people.
+ * 		This is a maybe because there is no practical way for it to be both single-player and two-player compatible. For example, is the combo shared? If so, then it would be difficult for
+ * 		two players to maintain the combo. If not, then it would be difficult for one player to maintain the combo.
+ * 	A graphics library class that contains references to all the bitmaps/drawables used in the app with dimensions scaled to fit on the device.
+ * 	Animate the colour wheel as the last colour changes
+ * 	End-round bonus points, which might require custom fonts to display the bonus point labels without using the not-so-good-looking default fonts. Haven't considered if it's worth it yet.
+ *  Thunderstorm effect: touching a lightning bolt pops all balloons on screen. The player gets n*combo points, where n is the number of balloons popped this way.
+ * 		As of now the thunderbolt effect might take a bit too much time and the payoff does not seem worth it because it seems really spontaneous.
+ *  Balloon fish: When touched, the player's combo goes to zero and pops all balloons on the screen. Also pops whatever they touch.
+ *  Better animated sprites
+ *  Shorten the duration of the pop audio by a few milliseconds
+ *  
+ * NOTES
+ * 	ALWAYS RECYCLE BITMAPS
+ * 
+ *  In Gingerbread, I had to explicitly set the background opacity of the master relative layout (the one that holds the pause and game over UI) to 0 in order to have everything show up appropriately
+ * 
+ * 	Views are still clickable even while animating, so make sure to prevent button interaction during activity transition
+ * 
+ * 	I removed the combo delay gauge altogether. The players do not need to know or worry about this much detail.
+ * 
+ * 	A huge lag seems to have occurred when I used drawables in the "drawable-hdpi" folder when there was nothing in the "drawable" folder. Or at least that's what it seems. 
+ * 
+ * 	Whenever the activity becomes inactive, the thread dies and so a new thread is created whenever the activity becomes active again. 
+ * 	This is why there was a bug where events don't activate when activity is resumed; the constructor wiped out the event classes.
+ * 
+ * 	The ImageButton class can use an XML file to load different images for different states
+ * 
+ * 	Recycling bitmaps and using an active and inactive queue made the game less laggy.
+ * 
+ * 	The original idea of combo rush (the goal is to get the highest number of combos) seemed quite boring so it will follow the same rules as arcade mode. Also, it is renamed Rush Mode to make it less misleading
+ * 
+ * 	The incorrect collision error (i.e. vertically colliding balloons undergoing horizontal collisions) was probably the result of the hitboxes not factoring in the balloons' speeds.
+ * 
+ * 	Try to avoid using a lot of references (or a chain of references) because this can cause some bugs (such as the Event classes not being called after returning to the Activity)
+ * 
+ * 	Wakelock is not needed to keep the screen from turning off; simply call a View object's (in this case, the GameCanvas) setKeepScreenOn function.
+ * 
+ * 	The BitmapDrawable class' setAlpha method seems to kill the performance when called through each iteration of the thread. Therefore I should find another way to transition the mist.
+ *  
+ * DISCARDED IDEAS:
+ *  The DynamicGameVariables class because it introduced a lot of weird bugs (I think related to too many references). An example is when you leave the arcade mode activity, come back, and
+ *  the app crashes. After fixing that, do it again and the back button kills the activity (because the thread blew up). Removing this class fixed both of these bugs and the Event classes
+ *  will directly interact with the GameCanvas class instead. 
+ *  
+ *  Wind is discarded because it presented bugs in the collision and the payoff to the gameplay experience wasn't worth it
+ * */

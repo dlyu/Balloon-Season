@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.balloon.dl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+     <LinearLayout
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" 
+        android:orientation="vertical" >
+		<com.balloon.dl.customviews.BorderedTextView
+	        style="@style/HUDFont"
+	        android:id="@+id/hud_score"
+	        android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			custom:borderSize="3dp"
+			custom:borderColor="#FF777777"/>
+		<com.balloon.dl.customviews.BorderedTextView
+	        style="@style/HUDFont"
+	        android:id="@+id/hud_combo"
+	        android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			custom:borderSize="3dp"
+			custom:borderColor="#FF777777"/>
+		<com.balloon.dl.customviews.BorderedTextView
+	        style="@style/HUDFontMini"
+	        android:id="@+id/hud_highscore"
+	        android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			custom:borderSize="2dp"
+			custom:borderColor="#FF777777"/>         
+     </LinearLayout>
+
+	<com.balloon.dl.customviews.BorderedTextView
+	    style="@style/HUDFont"
+	    android:id="@+id/hud_timer"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    custom:borderColor="#FF777777"
+	    custom:borderSize="2dp"
+	    android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
